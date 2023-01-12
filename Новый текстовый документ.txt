@@ -8,9 +8,10 @@
 </head>
 <body>
     <div>
+    <h1>Registration in social network</h1>
     <textarea name="Login" id="txt1"></textarea>
     <textarea name="Password" id="txt2"></textarea>
-    <button id="btn1">Log in</button>
+    <button id="btn1">Log on</button>
     <button id="btn2">Show</button>
     </div>
     <script>
@@ -23,24 +24,43 @@
             }
             if(document.getElementById('txt2').value.length >=4 && document.getElementById('txt2').value.length <=12)   {
             console.log("пороль подходит")
-         } else{ 
-            console.log("не подходит")}
-            for(let x=0;x>arr.length;x+=2){
-                if(txt1.value==arr[x]){
-                    console.log("не подходит")
-                    break
-                }else{
-                    console.log("подходит")
-                }
+            }else{
+            console.log("не подходит")
             }
+                for(let x=0;x<arr.length;x+=2){
+                if(txt1.value===arr[x]){
+                    console.log("Имя уже занято")
+                    break
+                    }else{
+                    console.log("Имя подходит")
+                    }
+                }
             arr.push(txt1.value)
             arr.push(txt2.value)
         }
         btn2.onclick = function(){
             console.log(arr)  
-            
         }
-        
     </script>
+        <div>
+            <H1>Enter in your social network</H1>
+        <textarea name="Login" id="txt3"></textarea>
+        <textarea name="Password" id="txt4"></textarea>
+        <button id="btn3">Check</button>
+        </div>
+        <script>
+            btn3.onclick =function(){
+                for(let y=0;y<arr.length;y+=2){
+                    for(let z =1;z<arr.length;z+=2){
+                if(txt3.value===arr[y] && txt4.value===arr[z]){
+                    console.log("Такой пользователь существует")
+                    break
+                    }else{
+                    console.log("Надо зарегестрировать пользователя")
+                    }
+                }
+            }
+        }
+        </script>
 </body>
 </html>
